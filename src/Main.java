@@ -62,7 +62,7 @@ public class Main {
  */
 class Impares {
     // Función que devuelve un booleano dependiendo de si el número es par o impar
-    private boolean isOdd(int num){
+    private boolean isEven(int num){
         if(num % 2 == 0)
             return true;
         return false;
@@ -73,7 +73,7 @@ class Impares {
         // Solo manejamos los números positivos.
         if (num < 0) return;
 
-        String oddOrEven = isOdd(num) ? "Es par" : "Es impar";
+        String oddOrEven = isEven(num) ? "Es par" : "Es impar";
         System.out.println(oddOrEven);
         while (num >= 0){
             System.out.println(num);
