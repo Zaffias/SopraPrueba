@@ -8,20 +8,19 @@ public class Main {
         /**
          * EJERCICIO NÚMERO PAR O IMPAR
          */
+        Scanner scanner = new Scanner(System.in);
         System.out.println("**************** EJERCICIO PAR E IMPAR ****************");
         int number;
         // Si lo introducido no es numérico entramos en el catch
         try {
             // Leemos el número desde el STDIN
             System.out.println("Introduce un número");
-            Scanner scanner = new Scanner(System.in);
-            number = Integer.parseInt(scanner.nextLine());
+            number = scanner.nextInt();
             // Printamos el numero con el metodo printNumbers de la clase Impares.
             Impares impares = new Impares();
             impares.printNumbers(number);
-            scanner.close();
-        }catch (NumberFormatException numberFormatException) {
-            System.out.println(numberFormatException.getMessage());
+        }catch (InputMismatchException inputMismatchException) {
+            System.out.println(inputMismatchException.getMessage());
         }
 
         /**
@@ -40,7 +39,21 @@ public class Main {
          * EJERCICIO SUELDO
          */
         System.out.println("********** EJERCICIO CALCULAR SUELDO **********");
-        System.out.println("El sueldo total es: " + CalculadoraSueldo.calcularSueldoTotal(44, 50) + "€");
+        double tarifa;
+        int horas;
+        try {
+            // Leemos el número desde el STDIN
+            System.out.println("Introduce la tarifa");
+            tarifa = scanner.nextDouble();
+            System.out.println("Introduce las horas");
+            horas = scanner.nextInt();
+            System.out.println("El sueldo total es: " + CalculadoraSueldo.calcularSueldoTotal(tarifa, horas) + "€");
+        }catch (InputMismatchException inputMismatchException) {
+            System.out.println(inputMismatchException.getMessage());
+        }
+
+
+
     }
 }
 
